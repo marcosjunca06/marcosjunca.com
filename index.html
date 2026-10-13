@@ -67,6 +67,8 @@
   .corner.tl { top: 22px; left: 24px; }
   .corner.tr { top: 22px; right: 24px; text-align: right; }
   .corner.bl { bottom: 22px; left: 24px; }
+  .vibe a { color: var(--copper); border-bottom: 1px solid var(--copper-dim); transition: border-color .2s; }
+  .vibe a:hover { border-color: var(--copper); }
   .corner nav a { margin-left: 18px; transition: color .2s; }
   .corner nav a:hover { color: var(--copper); }
   .scroll-hint { position: absolute; z-index: 1; bottom: 22px; left: 50%; transform: translateX(-50%); font: 500 11px/1 var(--mono); letter-spacing: .2em; color: var(--faint); animation: bob 2.4s ease-in-out infinite; }
@@ -110,6 +112,8 @@
     body { font-size: 16px; }
     .hero { padding: 88px 16px 72px; place-items: center start; }
     .corner.tr nav { display: none; }
+    .scroll-hint { display: none; }
+    .corner.bl { left: 16px; right: 16px; bottom: 18px; }
     main, footer { padding-left: 16px; padding-right: 16px; }
     .item { grid-template-columns: 1fr auto; }
     .item .desc { grid-column: 1 / -1; }
@@ -137,6 +141,7 @@
       <li><a href="#open-source">Open source ↓</a></li>
     </ul>
   </div>
+  <div class="corner bl vibe">Yes, this site is vibecoded.<br>Don't want a vibecoded site? <a href="https://www.berkshirehathaway.com/">Go here ↗</a></div>
   <div class="scroll-hint" aria-hidden="true">SCROLL</div>
 </header>
 
@@ -225,7 +230,7 @@
 </main>
 
 <footer class="silk">
-  <span>Marcos Junca · rev 2026.10 · no trackers</span>
+  <span>Marcos Junca · rev 2026.10 · vibecoded · no trackers</span>
   <a href="https://github.com/marcosjunca06/marcosjunca.com">Source ↗</a>
 </footer>
 
@@ -302,7 +307,7 @@
       const pads = [];
       const first = (along[0] + along[1]) / 2 - (count - 1) * pitch / 2;
       for (let i = 0; i < count; i++) pads.push(first + i * pitch);
-      traces.push(...bus(side, pads, rand, W, H, box));
+      traces.push(...bus(side, pads, rand, W, side === 'bottom' ? H - 64 : H, box));  // keep clear of the note at the bottom
     }
     const layer = el('g', {});
     traces.forEach((t, i) => {
