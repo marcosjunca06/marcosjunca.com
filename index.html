@@ -102,6 +102,10 @@
   .tag { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
   .go { display: inline-block; margin-left: 8px; transition: transform .3s ease, color .3s; color: var(--faint); }
   a.item:hover .go { transform: translateX(4px); color: var(--copper); }
+  .desc p { margin: 0; }
+  .photo { margin: 16px 0 4px; max-width: 340px; padding: 6px; border: 1px solid var(--rule); background: var(--panel); }
+  .photo img { display: block; width: 100%; height: auto; }
+  .photo figcaption { margin-top: 8px; font: 500 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--faint); }
   .paper .name { font-family: var(--sans); font-weight: 500; font-size: 18px; line-height: 1.35; }
 
   footer { max-width: 860px; margin: 0 auto; padding: 48px 24px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
@@ -133,7 +137,7 @@
 <header class="hero" id="top">
   <svg id="board" aria-hidden="true"></svg>
   <div class="corner tl">MJ-001 · rev 2026.10</div>
-  <div class="corner tr"><nav aria-label="Sections"><a href="#hardware">hardware</a><a href="#open-source">open source</a><a href="#research">research</a><a href="#software">software</a><a href="#academics">academics</a><a href="#early">early</a></nav></div>
+  <div class="corner tr"><nav aria-label="Sections"><a href="#hardware">hardware</a><a href="#open-source">open source</a><a href="#research">research</a><a href="#software">software</a><a href="#academics">academics</a><a href="#early">early</a><a href="#personal">personal</a></nav></div>
   <div class="chip" id="chip">
     <p class="hi">Hi, I'm</p>
     <h1>Marcos<br>Junca</h1>
@@ -234,15 +238,36 @@
     <div class="head"><span class="ref">C1</span><h2>Where it started</h2><span class="rule"></span></div>
     <div class="item">
       <span class="name">RC tanks</span>
-      <p class="desc">Radio-controlled tanks.</p>
-      <span class="tag">Age 10–15</span>
+      <p class="desc">Weird obsession with radio-controlled tanks, from age 10 to 15.</p>
+      <span class="tag"></span>
+    </div>
+  </section>
+
+  <section id="personal">
+    <div class="head"><span class="ref">P1</span><h2>Personal</h2><span class="rule"></span></div>
+    <div class="item">
+      <span class="name">Siblings</span>
+      <div class="desc">
+        <p>I have three siblings, one of them is my cofounder.</p>
+        <figure class="photo">
+          <img src="img/siblings.jpg" width="800" height="1066" loading="lazy" decoding="async"
+               alt="A selfie of Marcos on a city street, with a cyclist behind him">
+          <figcaption>Fig. 1</figcaption>
+        </figure>
+      </div>
+      <span class="tag"></span>
+    </div>
+    <div class="item">
+      <span class="name">Also</span>
+      <p class="desc">I also like chess and war movies (Romans, Greeks, Vikings).</p>
+      <span class="tag"></span>
     </div>
   </section>
 </main>
 
 <footer class="silk">
   <span>Marcos Junca · rev 2026.10 · vibecoded · no trackers</span>
-  <span><a href="https://www.linkedin.com/in/marcos-junca/">LinkedIn ↗</a> · <a href="https://github.com/marcosjunca06">GitHub ↗</a> · <a href="https://github.com/marcosjunca06/marcosjunca.com">Source ↗</a></span>
+  <a href="https://github.com/marcosjunca06/marcosjunca.com">Source ↗</a>
 </footer>
 
 <div class="probe" id="probe" aria-hidden="true">X <b id="px">000.00</b> Y <b id="py">000.00</b> mm</div>
